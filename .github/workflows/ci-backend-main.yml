@@ -18,6 +18,6 @@ jobs:
           distribution: 'zulu'
       - name: Compilação/Test/Package
         working-directory: back-end/
-        run: mvn --activate-prod package
+        run: mvn --activate-profiles prod package
   
   
