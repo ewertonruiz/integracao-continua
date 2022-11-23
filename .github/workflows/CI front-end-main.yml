@@ -25,17 +25,7 @@ jobs:
       - name: Compilação / Test / Package
         working-directory: front-end/
         run: npm run build --prod
-  package:
-    needs: teste
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16  
-      - name: Install npm
-        working-directory: front-end/
-        run: npm install 
+  
       - name: Compilação / Test / Package / build
         working-directory: front-end/
         run: npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
